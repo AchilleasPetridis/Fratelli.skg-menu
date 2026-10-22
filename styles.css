@@ -1,3 +1,9 @@
+:root {
+    --yellow: #edda7e;
+    --purple: #503a60;
+    --ciel: #80bcba;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 4.5rem;
@@ -5,13 +11,13 @@ html {
 
 body {
     width: 100%;
-    background-color: #80bcba;
+    background-color: var(--ciel);
     margin: 0;
 }
 
 .header-container {
     width: 100%;
-    background: linear-gradient(to bottom right, #edda7e, #80bcba, #503a60);
+    background: linear-gradient(to bottom right, var(--yellow), var(--ciel), var(--purple));
     border-top: 3px solid black;
     border-bottom: 3px solid black;
     margin-top: 8%;
@@ -30,7 +36,7 @@ body {
 nav {
     box-sizing: border-box;
     width: 100%;
-    background-color: #edda7e;
+    background-color: var(--yellow);
     border: 2px solid black;
     border-radius: 10px;
     margin-top: 5%;
@@ -60,8 +66,34 @@ nav a {
 }
 
 nav a:active {
-    color: #503a60;
+    color: var(--purple);
 }
+
+nav a.active {
+    color: var(--yellow);
+    background-color: var(--purple);
+    border: 1px solid var(--purple);
+}
+
+.new-button {
+    position: relative;
+}
+
+.new {
+    position: absolute;
+    top: 2px;
+    left: -1px;
+
+    font-size: 8px;
+    font-weight: bold;
+    color: red;
+
+    border: none;
+    transform: rotate(-30deg);
+    z-index: 100000;
+    
+}
+
 
 
 #main-container {
@@ -105,12 +137,30 @@ article p {
     text-align: center;
     font-size: 1.5rem;
     text-decoration: underline;
-    color: #503a60;
+    color: var(--purple);
 }
 
 span {
     font-weight: lighter;
     font-size: 0.9rem;
+}
+
+.new-item {
+    position: relative;
+}
+
+.new-discount {
+    transform: rotate(-25deg);
+    color: red;
+    display: inline-block;
+    position: absolute;
+    top: -5.5px;
+    left: -8px;
+    font-size: 0.6rem;
+}
+
+#discounts {
+    padding-left: 2px;
 }
 
 .description {
@@ -121,7 +171,7 @@ span {
 /* FOOTER */
 
 footer {
-    background-color: #503a60;
+    background-color: var(--purple);
     color: white;
     padding: 5px 10px;
     display: grid;
@@ -147,14 +197,15 @@ footer {
 #social {
     display: flex;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
-    
 }
 
-i {
-    font-size: 1.1rem;
-    color: white;
+#social img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    filter: brightness(0) invert(1);
 }
 
 #phone a {
@@ -172,6 +223,3 @@ i {
     font-size: 0.8rem;
     margin-right: 10%;
 }
-
-
-
